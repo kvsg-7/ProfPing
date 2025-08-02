@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ProfPing – QR Based Faculty Status</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+    .teacher {
+      background: #f1f1f1;
+      margin: 20px auto;
+      padding: 20px;
+      width: 300px;
+      border-radius: 10px;
+    }
+    .legend {
+      margin-top: 40px;
+    }
+    .dot {
+      height: 15px;
+      width: 15px;
+      display: inline-block;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    .green { background-color: green; }
+    .yellow { background-color: gold; }
+    .red { background-color: red; }
+  </style>
+</head>
+<body>
+  <h1>ProfPing</h1>
+  <div class="teacher">
+    <h2>Prof. Aarti Mehta</h2>
+    <img src="qrcodes/aarti_mehta.png" width="150" />
+    <p>Scan the QR code or <a href="status.html?id=aarti_mehta">click here</a></p>
+  </div>
+
+  <div class="legend">
+    <h3>Status Legend</h3>
+    <p><span class="dot green"></span>Available</p>
+    <p><span class="dot yellow"></span>Busy</p>
+    <p><span class="dot red"></span>Unavailable</p>
+  </div>
+</body>
+</html>
