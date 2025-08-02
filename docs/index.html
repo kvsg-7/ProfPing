@@ -7,63 +7,51 @@
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
-      background: #f9f9f9;
+      background: #f0f0f0;
     }
 
     h1 {
-      color: #222;
+      color: #333;
+      text-align: center;
     }
 
     .teacher {
-      border: 2px solid #ccc;
-      border-radius: 12px;
-      padding: 15px;
-      margin-bottom: 20px;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 500px;
+      margin: 30px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
     }
 
     .teacher img {
-      height: 120px;
-      margin-right: 20px;
-      border-radius: 8px;
+      width: 200px;
+      margin-bottom: 10px;
     }
 
     .legend {
-      margin-top: 40px;
+      max-width: 400px;
+      margin: 40px auto;
+      font-weight: bold;
     }
 
     .legend-item {
-      margin-bottom: 10px;
-      font-weight: bold;
       display: flex;
       align-items: center;
+      margin-bottom: 10px;
     }
 
     .box {
-      display: inline-block;
       width: 20px;
       height: 20px;
       margin-right: 10px;
       border-radius: 4px;
     }
 
-    .green { background: green; }
-    .yellow { background: gold; }
-    .red { background: red; }
-
-    .teacher-details h2 {
-      margin: 0;
-      font-size: 1.4em;
-    }
-
-    .teacher-details p {
-      margin: 5px 0;
-      font-size: 0.95em;
-      color: #444;
-    }
+    .green { background-color: green; }
+    .yellow { background-color: gold; }
+    .red { background-color: red; }
   </style>
 </head>
 <body>
@@ -71,20 +59,18 @@
   <h1>ProfPing - Faculty Availability</h1>
 
   <div class="teacher">
+    <h2>Aarti Mehta</h2>
     <a href="status.html?id=aarti_mehta" target="_blank">
       <img src="qrcodes/aarti_mehta.png" alt="QR for Aarti Mehta">
     </a>
-    <div class="teacher-details">
-      <h2>Aarti Mehta</h2>
-      <p>Scan or click QR to check availability</p>
-    </div>
+    <p>Scan or click QR to check availability</p>
   </div>
 
   <div class="legend">
     <h3>Status Legend</h3>
-    <div class="legend-item"><span class="box green"></span>Available</div>
-    <div class="legend-item"><span class="box yellow"></span>Busy</div>
-    <div class="legend-item"><span class="box red"></span>Unavailable</div>
+    <div class="legend-item"><div class="box green"></div>Available</div>
+    <div class="legend-item"><div class="box yellow"></div>Busy</div>
+    <div class="legend-item"><div class="box red"></div>Unavailable</div>
   </div>
 
 </body>
