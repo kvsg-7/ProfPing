@@ -1,49 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>ProfPing – QR Based Faculty Status</title>
+  <meta charset="UTF-8">
+  <title>ProfPing</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 30px;
-    }
-    .teacher {
-      background: #f1f1f1;
-      margin: 20px auto;
       padding: 20px;
-      width: 300px;
-      border-radius: 10px;
+      background: #f9f9f9;
     }
+
+    h1 {
+      color: #222;
+    }
+
+    .teacher {
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 20px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .teacher img {
+      height: 120px;
+      margin-right: 20px;
+      border-radius: 8px;
+    }
+
     .legend {
       margin-top: 40px;
     }
-    .dot {
-      height: 15px;
-      width: 15px;
-      display: inline-block;
-      border-radius: 50%;
-      margin-right: 8px;
+
+    .legend-item {
+      margin-bottom: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
     }
-    .green { background-color: green; }
-    .yellow { background-color: gold; }
-    .red { background-color: red; }
+
+    .box {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      border-radius: 4px;
+    }
+
+    .green { background: green; }
+    .yellow { background: gold; }
+    .red { background: red; }
+
+    .teacher-details h2 {
+      margin: 0;
+      font-size: 1.4em;
+    }
+
+    .teacher-details p {
+      margin: 5px 0;
+      font-size: 0.95em;
+      color: #444;
+    }
   </style>
 </head>
 <body>
-  <h1>ProfPing</h1>
+
+  <h1>ProfPing - Faculty Availability</h1>
+
   <div class="teacher">
-    <h2>Prof. Aarti Mehta</h2>
-    <img src="qrcodes/aarti_mehta.png" width="150" />
-    <p>Scan the QR code or <a href="status.html?id=aarti_mehta">click here</a></p>
+    <a href="status.html?id=aarti_mehta" target="_blank">
+      <img src="qrcodes/aarti_mehta.png" alt="QR for Aarti Mehta">
+    </a>
+    <div class="teacher-details">
+      <h2>Aarti Mehta</h2>
+      <p>Scan or click QR to check availability</p>
+    </div>
   </div>
 
   <div class="legend">
     <h3>Status Legend</h3>
-    <p><span class="dot green"></span>Available</p>
-    <p><span class="dot yellow"></span>Busy</p>
-    <p><span class="dot red"></span>Unavailable</p>
+    <div class="legend-item"><span class="box green"></span>Available</div>
+    <div class="legend-item"><span class="box yellow"></span>Busy</div>
+    <div class="legend-item"><span class="box red"></span>Unavailable</div>
   </div>
+
 </body>
 </html>
