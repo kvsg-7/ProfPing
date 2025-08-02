@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Status – ProfPing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+    .dot {
+      height: 30px;
+      width: 30px;
+      display: inline-block;
+      border-radius: 50%;
+    }
+    .green { background-color: green; }
+    .yellow { background-color: gold; }
+    .red { background-color: red; }
+  </style>
+</head>
+<body>
+  <h1 id="name">Loading...</h1>
+  <div id="statusBox">
+    <div class="dot" id="statusDot"></div>
+    <p id="statusText"></p>
+    <p id="roomText"></p>
+    <p id="updatedText"></p>
+  </div>
+
+  <script>
+    const id = new URLSearchParams(window.location.search).get('id');
+    fetch(`data/${id}.json`)
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("name").innerText = data.name;
+        document.getElementById("statusText").innerText = "Status: " + data.status.toUpperCase();
+        document.getElementById("roomText").innerText = "Room: " + data.room;
+        document.getElementById("updatedText").innerText = "Last Updated: " + data.updated;
+
+        const dot = document.getElementById("statusDot");
+        if (data.status === "available") dot.classList.add("green");
+        else if (data.status === "busy") dot.classList.add("yellow");
+        else dot.classList.add("red");
+      })
+      .catch(err => {
+        document.getElementById("name").innerText = "Invalid or missing data.";
+        document.getElementById("statusBox").style.display = "none";
+      });
+  </script>
+</body>
+</html>
